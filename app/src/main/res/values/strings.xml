@@ -2,4 +2,14 @@
     <string name="app_name">My Application</string>
     <string name="create_your_schedule">Create your schedule</string>
     <string name="add_item">Add Item</string>
+    <string name="type">Type</string>
+    <string-array name="type_arr">
+        <item>Workout</item>
+        <item>Wake Up</item>
+        <item>Cook</item>
+        <item>Chores</item>
+        <item>Work</item>
+        <item>Eat</item>
+        <item>Other</item>
+    </string-array>
 </resources>
