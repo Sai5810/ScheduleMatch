@@ -22,7 +22,12 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK) {
-                String strEditText = data.getStringExtra("editTextValue");
+            int[] stTime = data.getIntArrayExtra("stTime");
+            int[] endTime = data.getIntArrayExtra("endTime");
+            int repetitions = Integer.parseInt(data.getStringExtra("repetitions"));
+            String type = data.getStringExtra("type");
+            String date = data.getStringExtra("date");
+
         }
     }
 
