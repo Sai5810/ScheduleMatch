@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void add_item(View view) {
-        Intent myIntent = new Intent(MainActivity.this, ItemAct.class);
-        MainActivity.this.startActivity(myIntent);
+        Intent intent = new Intent(this, ItemAct.class);
+        startActivity(intent);
     }
 }
