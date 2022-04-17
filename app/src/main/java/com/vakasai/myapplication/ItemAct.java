@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class ItemAct extends AppCompatActivity {
@@ -47,18 +48,22 @@ public class ItemAct extends AppCompatActivity {
     }
 
     public void formFilled(View v) {
-        Intent intent = new Intent();
-        Spinner spin = findViewById(R.id.spinner);
         EditText date = findViewById(R.id.date);
-        TimePicker stTime = findViewById(R.id.timePicker);
-        TimePicker endTime = findViewById(R.id.timePicker2);
-        EditText repetitions = findViewById(R.id.repetitions);
-        intent.putExtra("type", spin.getSelectedItem().toString());
-        intent.putExtra("date", date.getText().toString());
-        intent.putExtra("stTime", new int[]{stTime.getHour(), stTime.getMinute()});
-        intent.putExtra("endTime", new int[]{endTime.getHour(), endTime.getMinute()});
-        intent.putExtra("repetitions", repetitions.getText().toString());
-        setResult(RESULT_OK, intent);
-        finish();
+        if (!(date.getText().toString()).matches("")) {
+            Spinner spin = findViewById(R.id.spinner);
+            TimePicker stTime = findViewById(R.id.timePicker);
+            TimePicker endTime = findViewById(R.id.timePicker2);
+            EditText repetitions = findViewById(R.id.repetitions);
+            Intent intent = new Intent();
+            intent.putExtra("stTime", new int[]{stTime.getHour(), stTime.getMinute()});
+            intent.putExtra("endTime", new int[]{endTime.getHour(), endTime.getMinute()});
+            if (!(repetitions.getText().toString()).matches("")) {
+                intent.putExtra("repetitions", Integer.parseInt(repetitions.getText().toString()));
+            }
+            intent.putExtra("type", spin.getSelectedItem().toString());
+            intent.putExtra("date", date.getText().toString());
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 }
