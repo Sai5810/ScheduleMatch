@@ -10,14 +10,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> launchItem;
-    int bottom = R.id.addbutton;
+    int bottom = R.id.addBtn;
 
     public void addToBottomView(TextView tv, ConstraintLayout lay, String s) {
         tv.setText(s);
+        tv.setTextSize(20);
         tv.setId(View.generateViewId());
         ConstraintSet set = new ConstraintSet();
         lay.addView(tv, 0);
@@ -39,11 +41,12 @@ public class MainActivity extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
                         ConstraintLayout lay = findViewById(R.id.main);
+                        String username = ((EditText) findViewById(R.id.username)).getText().toString();
                         addToBottomView(new TextView(MainActivity.this), lay, data.getStringExtra("type"));
                         int[] st = data.getIntArrayExtra("stTime");
                         int[] end = data.getIntArrayExtra("endTime");
                         addToBottomView(new TextView(MainActivity.this), lay,
-                                st[0] + ":" + st[1] + " - " + end[0] + end[1]);
+                                st[0] + ":" + st[1] + " - " + end[0] + ":" + end[1]);
                         addToBottomView(new TextView(MainActivity.this), lay,
                                 data.getStringExtra("date"));
                         if (data.hasExtra("repetitions")) {

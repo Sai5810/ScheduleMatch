@@ -56,7 +56,7 @@ public class FirstFragment extends Fragment {
         bottom = R.id.textView3;
         addToBottomView(new TextView(getActivity()), lay, type);
         addToBottomView(new TextView(getActivity()), lay,
-                st[0] + ":" + st[1] + " - " + end[0] + end[1]);
+                st[0] + ":" + st[1] + " - " + end[0] + ":" + end[1]);
         addToBottomView(new TextView(getActivity()), lay, date);
     }
 
