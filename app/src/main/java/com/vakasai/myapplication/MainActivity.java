@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int REQUEST_CODE = 1;
     ActivityResultLauncher<Intent> launchItem;
     int bottom = R.id.addbutton;
 

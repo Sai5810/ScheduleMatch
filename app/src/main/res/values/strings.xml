@@ -31,4 +31,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="starting_time">Starting Time</string>
     <string name="ending_time">Ending Time</string>
+    <string name="you_have_connected_with">You have connected with</string>
+    <string name="sai">SAI</string>
+    <string name="your_proxy_number">Your Proxy Number:</string>
 </resources>
