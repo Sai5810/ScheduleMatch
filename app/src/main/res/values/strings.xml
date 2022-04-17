@@ -34,4 +34,6 @@
     <string name="you_have_connected_with">You have connected with</string>
     <string name="sai">SAI</string>
     <string name="your_proxy_number">Your Proxy Number:</string>
+    <string name="loading">Loading…</string>
+    <string name="ishaan_sharma">Ishaan Sharma</string>
 </resources>
